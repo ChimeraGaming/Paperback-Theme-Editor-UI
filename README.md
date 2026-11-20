@@ -1,11 +1,16 @@
 # Paperback-Theme-Editor-UI
 
+![Version 1.0](https://img.shields.io/badge/version-1.0-blue)
+![iOS](https://img.shields.io/badge/platform-iOS-black)
+
+**[Open the live editor](https://chimeragaming.github.io/Paperback-Theme-Editor-UI/)**
+
 Make a Paperback theme in your browser and see the colors change as you edit.
 Nothing to install, no account needed, and no file upload required.
 
 ## How to use it
 
-Once the site is published, open it in your browser.
+Open the live editor in your browser.
 
 1. Start with the included theme, or optionally import your own `.pbcolors` file.
 2. Choose Light or Dark and edit the colors and opacity.
@@ -33,7 +38,8 @@ need testing on a real iPhone.
 I am not affiliated with the Paperback team. This is an independent project
 and is not an official or endorsed Paperback tool.
 
-## Development
+<details>
+<summary>Development</summary>
 
 These commands are for contributors. People using the published site only
 need a browser.
@@ -48,6 +54,8 @@ Open [the local editor](http://127.0.0.1:4173). No packages or build step needed
 
 See [contributing](CONTRIBUTING.md), [tests](docs/checks.md), and
 [GitHub Pages setup](docs/github-pages.md) for more information.
+
+</details>
 
 ## Credits
 
