@@ -219,53 +219,6 @@ p  {
   overflow-y: auto;
 }
 
-.contents > p:not(.eyebrow), .guide-note p  {
-  color: var(--editor-muted);
-  font-size: .875rem;
-  margin: .7rem 0 1rem;
-}
-
-.contents nav  {
-  display: grid;
-  gap: 2px;
-}
-
-.contents nav a  {
-  padding: .55rem .65rem;
-  border-left: 2px solid transparent;
-  font-size: .875rem;
-  text-decoration: none;
-}
-
-.contents nav a[aria-current="true"]  {
-  background: var(--editor-selected);
-  border-color: var(--editor-accent);
-  color: var(--editor-text);
-  font-weight: 650;
-}
-
-.guide-note  {
-  border-top: 1px solid var(--editor-border);
-  padding-top: 1rem;
-  margin-top: 1.25rem;
-}
-
-.role-help  {
-  border-top: 1px solid var(--editor-border);
-  padding-top: 1rem;
-  margin-top: .3rem;
-}
-
-.role-help p  {
-  color: var(--editor-muted);
-  font-size: .875rem;
-  margin-top: .3rem;
-}
-
-.contents > a  {
-  font-size: .875rem;
-}
-
 .colors-panel  {
   padding: .4rem;
   background: var(--editor-surface);
@@ -1566,7 +1519,7 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 /* ==============================
-   REFERENCE BANNER AND WORKSPACE
+   FILE CONTROLS AND WORKSPACE
    ============================== */
 
 .workspace  {
@@ -1582,64 +1535,6 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
   padding: .35rem .5rem;
   border-bottom: 1px solid var(--editor-border);
   background: var(--editor-surface);
-}
-
-.contents .eyebrow  {
-  margin-bottom: .25rem;
-}
-
-.contents > p:not(.eyebrow)  {
-  margin: .2rem 0 .35rem;
-}
-
-.contents nav  {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .25rem;
-}
-
-.contents nav a  {
-  padding: .25rem .35rem;
-  border-left: 0;
-  border-bottom: 2px solid transparent;
-}
-
-.contents nav a[aria-current="true"]  {
-  border-bottom-color: var(--editor-accent);
-}
-
-.role-help  {
-  display: inline-block;
-  width: 62%;
-  padding-top: .2rem;
-  margin-top: .25rem;
-  vertical-align: top;
-  border-top: 0;
-}
-
-.role-help h3, .guide-note h3  {
-  display: inline;
-  margin-right: .4rem;
-  font-size: .875rem;
-}
-
-.role-help p, .guide-note p  {
-  display: inline;
-  margin: 0;
-  font-size: .875rem;
-}
-
-.guide-note  {
-  display: inline-block;
-  width: 36%;
-  padding-top: .2rem;
-  margin-top: .25rem;
-  border-top: 0;
-}
-
-.contents > a  {
-  display: inline-block;
-  margin-top: .3rem;
 }
 
 .contents .name-field  {
@@ -1740,10 +1635,6 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
   text-align: center;
 }
 
-.contents nav  {
-  justify-content: center;
-}
-
 .section-heading  {
   justify-content: center;
   flex-wrap: wrap;
@@ -1782,10 +1673,6 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 .device-controls select  {
   text-align: center;
   text-align-last: center;
-}
-
-.role-help, .guide-note  {
-  text-align: center;
 }
 
 .status  {
@@ -1861,10 +1748,6 @@ footer .format-notes  {
     flex-wrap: wrap;
   }
 
-  .role-help, .guide-note  {
-    width: 100%;
-  }
-
 }
 
 @media (max-width: 640px)  {
@@ -1894,11 +1777,6 @@ footer .format-notes  {
 
   .contents  {
     padding: .35rem;
-  }
-
-  .contents nav  {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .name-field, .name-field input  {
@@ -1932,13 +1810,6 @@ footer .format-notes  {
 
   .color-inputs label, .panel-note, .color-row > p  {
     font-size: .875rem;
-  }
-
-  .contents nav a  {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
   }
 
   .loading-control, .highlight-control  {

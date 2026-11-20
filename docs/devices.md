@@ -61,8 +61,8 @@ including phone height limits and wider tablet layouts. This checks geometry;
 it does not establish that Paperback renders identically on every device.
 
 The sample screen scales uniformly within the editor panel. Selecting iPad
-expands the preview column beside a narrower, scrolling color editor. The color
-reference sits in a banner above the workspace. Tablet size follows available
+expands the preview column beside a narrower, scrolling color editor. The
+file controls sit above the workspace. Tablet size follows available
 width without a phone-height cap, so portrait models may need page scrolling.
 The open iPhone Duo also uses this expanded workspace and has no phone-height
 cap. Its closed display keeps the regular phone workspace.

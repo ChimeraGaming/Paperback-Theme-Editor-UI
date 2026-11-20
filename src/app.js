@@ -63,26 +63,8 @@ function canReplace() {
 
 function selectRole(key) {
   selected = key;
-  const [, label, description] = roles.find(([role]) => role === key);
-  $('#role-help-title').textContent = label;
-  $('#role-help-text').textContent = description;
-  document.querySelectorAll('#role-index a').forEach(link => link.setAttribute('aria-current', String(link.dataset.role === key)));
   document.querySelectorAll('.color-row').forEach(row => row.classList.toggle('selected', row.id === `role-${key}`));
   markPreview();
-}
-
-function buildIndex() {
-  for (const [key, label] of roles) {
-    const link = document.createElement('a');
-    link.href = `#role-${key}`;
-    link.textContent = label;
-    link.dataset.role = key;
-    link.addEventListener('click', () => {
-      selectRole(key);
-      $(`#role-${key}`).focus({ preventScroll: true });
-    });
-    $('#role-index').append(link);
-  }
 }
 
 function buildFields() {
@@ -362,7 +344,6 @@ async function start() {
     } catch {
       message = 'The saved draft could not be read. Starter colors loaded. Import a backup or begin a new theme.';
     }
-    buildIndex();
     buildFields();
     renderPreview();
     ['import', 'export', 'download', 'save', 'reset'].forEach(id => { $(`#${id}`).disabled = false; });

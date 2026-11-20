@@ -57,6 +57,22 @@ See [contributing](CONTRIBUTING.md), [tests](docs/checks.md), and
 
 </details>
 
+## Contributions
+
+Led and maintained by ChimeraGaming. The maintainer decides
+what belongs in the project and reviews pull requests.
+
+Pull requests are welcome. Please:
+
+1. Keep changes focused and explain what they fix.
+2. Follow the plain writing, readable code, and simple interface style.
+3. Keep the app browser-based, private, and usable on mobile.
+4. Preserve theme data, licenses, and credits.
+5. Check your work and report the results.
+
+Read the full rules in [AGENTS.md](AGENTS.md) or [CLAUDE.md](CLAUDE.md), and the
+[contribution guide](CONTRIBUTING.md), before submitting a pull request.
+
 ## Credits
 
 Thanks to the [Paperback team](https://paperback.moe/) for the app and its theme
