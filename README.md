@@ -60,7 +60,7 @@ See [contributing](CONTRIBUTING.md), [tests](docs/checks.md), and
 </details>
 
 ## Contributions
-
+As of v1.1 this project is 100% Human Coded.
 Led and maintained by ChimeraGaming. The maintainer decides
 what belongs in the project and reviews pull requests.
 
