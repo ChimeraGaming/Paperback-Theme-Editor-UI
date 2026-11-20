@@ -1,0 +1,48 @@
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+.codex/
+.agents/
+.local/
+
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.parcel-cache/
+.vite/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Personal themes, downloads, and working files
+private-themes/
+exports/
+downloads/
+tmp/
+temp/
+*.log
+*.tmp
+*.bak
+
+# Browser test output
+playwright-report/
+test-results/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
