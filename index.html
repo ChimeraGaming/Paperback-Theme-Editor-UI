@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Edit Paperback theme colors with a local live preview.">
+  <title>Paperback-Theme-Editor-UI</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="src/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#colors">Skip to colors</a>
+  <header class="site-header">
+    <div><p class="eyebrow">PAPERBACK TOOLS / LOCAL EDITOR</p><h1>Paperback-Theme-Editor-UI</h1></div>
+    <p>Build a palette.<br>See where every color goes.</p>
+  </header>
+  <p id="status" class="status" role="status">Loading the starter theme...</p>
+  <main class="workspace">
+    <aside class="contents" aria-labelledby="guide-title">
+      <p class="eyebrow">REFERENCE</p><h2 id="guide-title">Color index</h2>
+      <p>Choose a role to find its controls and mark its place in the preview.</p>
+      <nav id="role-index" aria-label="Color roles"></nav>
+      <div class="role-help"><h3 id="role-help-title">Accent</h3><p id="role-help-text">Main actions, selected tabs, and highlighted controls.</p></div>
+      <div class="guide-note"><h3>About opacity</h3><p>1 is solid. 0 is invisible. Values between them let the surface underneath show through.</p></div>
+      <label class="name-field" for="theme-name">File name <input id="theme-name" value="My theme" maxlength="80" autocomplete="off"></label>
+      <div class="file-bar" aria-label="Theme files">
+        <div class="actions">
+          <button id="import" disabled>Import theme</button>
+          <button id="save" disabled>Save draft</button>
+          <button id="export" class="primary" disabled>Export .pbcolors</button>
+          <button id="download" disabled hidden>Download file</button>
+          <button id="reset" disabled>Reset</button>
+        </div>
+        <input id="file" type="file" hidden>
+      </div>
+      <details class="transfer-help"><summary>Using themes on iPhone or iPad</summary>
+        <p>Export opens the share sheet when file sharing is supported. Choose Paperback if it appears, or Save to Files. Choose Download file if you prefer a download. If sharing is unavailable, Export downloads the file instead.</p>
+        <p>In Safari, open Downloads to find your file. In Files, locate the .pbcolors file, touch and hold it, then choose Share. Look for Paperback, including under More. If it is not listed, use Paperback's theme import option if your version provides one. Keep the .pbcolors extension.</p>
+        <p>To edit a saved theme here, choose Import theme and browse to the file. A saved draft is browser storage, not a file in Files.</p>
+      </details>
+    </aside>
+    <section id="colors" class="colors-panel" aria-labelledby="colors-title" tabindex="-1">
+      <div class="section-heading"><div><p class="eyebrow">PALETTE</p><h2 id="colors-title">Theme colors</h2></div><span id="mode-label">Light appearance</span></div>
+      <div class="mode-switch" role="group" aria-label="Edit appearance">
+        <button data-mode="lightColor" aria-pressed="true">Light</button>
+        <button id="appearance-toggle" class="appearance-sky" type="button" aria-label="Switch to dark appearance">
+          <svg class="appearance-sun" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="6"/><path d="M16 2v4m0 20v4M2 16h4m20 0h4M6 6l3 3m14 14 3 3M6 26l3-3M23 9l3-3"/></svg>
+          <svg class="appearance-moon" viewBox="0 0 32 32" aria-hidden="true"><path d="M25 21A12 12 0 0 1 11 5a12 12 0 1 0 14 16Z"/></svg>
+        </button>
+        <button data-mode="darkColor" aria-pressed="false">Dark</button>
+      </div>
+      <p class="panel-note">Both appearances are included in your export. Hex edits use 8-bit RGB; untouched imported values keep their full precision.</p>
+      <div id="color-fields"></div>
+    </section>
+    <section class="preview-panel" aria-labelledby="preview-title">
+      <div class="section-heading"><div><p class="eyebrow">LIVE VIEW</p><h2 id="preview-title">App preview</h2></div><span id="preview-mode">Light</span></div>
+      <div class="device-controls">
+        <label for="device-family">Select Device<select id="device-family" aria-label="Select Device"><option>iPhone</option><option>iPad</option></select></label>
+        <label for="device-model">Select Model<select id="device-model" aria-label="Select Model"></select></label>
+      </div>
+      <label id="sizing-control" class="sizing-control" for="preview-sizing" hidden>Preview sizing
+        <select id="preview-sizing" aria-label="Preview sizing"><option value="compare">Compare screen sizes</option><option value="fill">Fill available space</option></select>
+      </label>
+      <p id="device-note" class="panel-note"></p>
+      <div class="screen-switch" role="group" aria-label="Preview screen">
+        <button data-screen="home" aria-pressed="true">Home</button><button data-screen="library" aria-pressed="false">Library</button><button data-screen="search" aria-pressed="false">Search</button><button data-screen="details" aria-pressed="false">Title details</button><button data-screen="settings" aria-pressed="false">Settings</button>
+      </div>
+      <div class="preview-options">
+        <div>
+          <label class="loading-control"><input id="loading" type="checkbox"> Show loading overlay</label>
+          <label class="highlight-control"><input id="highlight" type="checkbox"> Highlight selected color</label>
+        </div>
+        <button id="rotate-device" class="rotate-device" type="button">Rotate preview</button>
+      </div>
+      <div class="preview-mat"><div id="phone" class="phone" aria-label="Paperback-style preview"></div></div>
+      <p id="selection-note" class="selection-note"></p>
+      <p class="panel-note">Layout based on supplied Paperback v0.9-r217 screenshots. Color mapping and light appearance are approximations. Scroll inside the phone to see more. Sample titles and covers are original.</p>
+    </section>
+  </main>
+  <footer><span>Independent and open source. Theme editing stays on your device. <a href="README.md">Project notes</a></span><a class="format-notes" href="docs/theme-format.md">Theme format notes</a></footer>
+</body>
+</html>
