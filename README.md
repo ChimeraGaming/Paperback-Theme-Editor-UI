@@ -7,6 +7,10 @@
 
 Make a Paperback theme in your browser and see the colors change as you edit.
 Nothing to install, no account needed, and no file upload required.
+See your "Mistakes" before you make them
+
+<img width="1894" height="927" alt="image" src="https://github.com/user-attachments/assets/64903bef-08e9-4d84-a126-9135e095a7ab" />
+
 
 ## How to use it
 
