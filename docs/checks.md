@@ -83,3 +83,12 @@ app before claiming compatibility with a particular release.
 - [File-sharing support checks](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/canShare)
 - [Sharing files from a user action](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share)
 - [Finding downloads in Files](https://support.apple.com/en-us/102440)
+
+## Desktop color scrolling
+
+Desktop color panels have their own vertical scrollbar with scroll chaining
+disabled. Wide panels show two columns in reading order. At a 1920-pixel
+viewport, keyboard scrolling moved the color panel while the page position and
+preview stayed unchanged. At 390 pixels, the color panel returned to normal
+page scrolling without horizontal overflow. Palette and Live View labels were
+removed from the section headings.
