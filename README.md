@@ -1,16 +1,15 @@
 # Paperback-Theme-Editor-UI
 
-![Version 1.1](https://img.shields.io/badge/version-1.1-blue)
-![iOS](https://img.shields.io/badge/platform-iOS-black)
+![Version 1.1](https://img.shields.io/badge/version-1.1-7FFF00)
+![iOS](https://img.shields.io/badge/platform-iOS-7851A9)
 
 **[Open the live editor](https://chimeragaming.github.io/Paperback-Theme-Editor-UI/)**
 
 Make a Paperback theme in your browser and see the colors change as you edit.
 Nothing to install, no account needed, and no file upload required.
-See your "Mistakes" before you make them
+See your mistakes before you make them.
 
 <img width="1894" height="927" alt="image" src="https://github.com/user-attachments/assets/64903bef-08e9-4d84-a126-9135e095a7ab" />
-
 
 ## How to use it
 
@@ -35,9 +34,8 @@ browser data or change devices.
 
 ## About the preview
 
-The preview is an approximation based on Paperback v0.9-r217 screenshots.
-Check your finished theme in Paperback. Direct sharing and installation still
-need testing on a real iPhone.
+The preview is based on Paperback v0.9-r217 screenshots. System effects and
+some color placement can differ from the app.
 
 I am not affiliated with the Paperback team. This is an independent project
 and is not an official or endorsed Paperback tool.
@@ -82,7 +80,9 @@ Read the full rules in [AGENTS.md](AGENTS.md) or [CLAUDE.md](CLAUDE.md), and the
 Thanks to the [Paperback team](https://paperback.moe/) for the app and its theme
 support, and to [Celarye](https://github.com/celarye) for the
 [public themes and Python theme creator](https://github.com/celarye/paperback-themes).
-That project provided the format reference and the starter colors used here.
+That project provided the original format reference and the starter colors used here.
+Thanks also to [LucifersCircle](https://github.com/LucifersCircle/theme-editor)
+for the current theme format example and color-mapping research.
 
 Apple's device specifications helped with the preview sizes. Source links are
 in the [device notes](docs/devices.md). The sample covers and titles were made
