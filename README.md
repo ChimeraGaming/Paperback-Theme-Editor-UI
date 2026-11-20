@@ -3,7 +3,7 @@
 ![Version 1.1](https://img.shields.io/badge/version-1.1-7FFF00)
 ![iOS](https://img.shields.io/badge/platform-iOS-7851A9)
 
-**[Open the live editor](https://chimeragaming.github.io/Paperback-Theme-Editor-UI/)**
+# **[Open the live editor](https://chimeragaming.github.io/Paperback-Theme-Editor-UI/)**
 
 Make a Paperback theme in your browser and see the colors change as you edit.
 Nothing to install, no account needed, and no file upload required.
