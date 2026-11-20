@@ -614,8 +614,8 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
   border: 4px solid #263440;
   border-radius: 22px;
   overflow: hidden;
-  background: var(--backgroundColor);
-  color: var(--bodyTextColor);
+  background: var(--background);
+  color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   position: relative;
   isolation: isolate;
@@ -837,7 +837,7 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .wide-device .tablet-tracking .sample-secondary  {
-  border: 1px dashed var(--buttonNormalTextColor);
+  border: 1px dashed var(--secondaryText);
   border-radius: 12px;
   padding: 15px;
 }
@@ -888,7 +888,7 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .home-heading  {
-  color: var(--accentColor);
+  color: var(--accent);
   text-align: center;
   font-size: .9rem;
   position: relative;
@@ -898,9 +898,9 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 .round-control  {
   display: inline-grid;
   place-items: center;
-  border: 1px solid var(--separatorColor);
-  color: var(--bodyTextColor);
-  background: var(--backgroundColor);
+  border: 1px solid var(--separator);
+  color: var(--text);
+  background: var(--background);
   border-radius: 50%;
   width: 34px;
   height: 34px;
@@ -927,14 +927,14 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .source-tabs > span  {
-  border: 1px solid var(--separatorColor);
+  border: 1px solid var(--separator);
   padding: 7px 10px;
   border-radius: 20px;
 }
 
 .source-tabs .source-selected  {
-  background: var(--buttonNormalBackgroundColor);
-  color: var(--buttonNormalTextColor);
+  background: var(--secondary);
+  color: var(--secondaryText);
 }
 
 .source-tabs svg  {
@@ -947,13 +947,13 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .source-label  {
-  color: var(--accentColor);
+  color: var(--accent);
   font-size: .65rem;
   margin-bottom: 2px;
 }
 
 .home-section h4  {
-  color: var(--accentColor);
+  color: var(--accent);
   font-size: 1rem;
   margin: 0 0 7px;
   display: flex;
@@ -1037,14 +1037,14 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .book-title  {
-  color: var(--accentColor);
+  color: var(--accent);
   font-size: .8rem;
   line-height: 1.3;
   margin-top: .3rem;
 }
 
 .book-meta  {
-  color: var(--bodyTextColor);
+  color: var(--text);
   font-size: .65rem;
   line-height: 1.35;
   margin-top: .15rem;
@@ -1055,9 +1055,9 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .preview-search  {
-  background: var(--backgroundColor);
-  color: var(--subtitleTextColor);
-  border: 1px solid var(--separatorColor);
+  background: var(--background);
+  color: var(--textSecondary);
+  border: 1px solid var(--separator);
   font-size: .8rem;
   padding: 9px 11px;
   margin: 0 0 12px;
@@ -1109,8 +1109,8 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
   min-width: 20px;
   padding: 2px 5px;
   border-radius: 12px;
-  background: var(--accentColor);
-  color: var(--accentTextColor);
+  background: var(--accent);
+  color: var(--primaryText);
   font-size: .75rem;
   text-align: center;
 }
@@ -1123,7 +1123,7 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .advanced-heading  {
-  color: var(--accentColor);
+  color: var(--accent);
   font-size: 1rem;
   margin: 0 0 7px;
 }
@@ -1139,18 +1139,18 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
   gap: 10px;
   padding: 9px 12px;
   border-radius: 22px;
-  background: var(--foregroundColor);
+  background: var(--foreground);
 }
 
 .search-source p  {
-  color: var(--accentColor);
+  color: var(--accent);
   font-size: .85rem;
   line-height: 1.3;
 }
 
 .search-source small  {
   display: block;
-  color: var(--bodyTextColor);
+  color: var(--text);
   font-size: .6rem;
   margin-top: 2px;
 }
@@ -1177,7 +1177,7 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .preview-chevron  {
-  color: var(--accentColor);
+  color: var(--accent);
   width: 7px;
   height: 7px;
   border-right: 1px solid currentColor;
@@ -1191,45 +1191,45 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 .phone-bottom  {
   padding: 4px 13px 10px;
   flex: none;
-  background: var(--backgroundColor);
+  background: var(--background);
 }
 
 .reading-bar  {
-  border: 1px solid var(--separatorColor);
+  border: 1px solid var(--separator);
   border-radius: 24px;
   padding: 6px 10px 6px 14px;
   margin-bottom: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--backgroundColor);
+  background: var(--background);
 }
 
 .reading-bar strong  {
   display: block;
-  color: var(--accentColor);
+  color: var(--accent);
   font-size: .65rem;
   font-weight: 500;
 }
 
 .reading-bar small  {
   display: block;
-  color: var(--bodyTextColor);
+  color: var(--text);
   font-size: .6rem;
 }
 
 .reading-bar > span  {
-  color: var(--accentColor);
+  color: var(--accent);
 }
 
 .app-nav  {
   display: flex;
   justify-content: space-around;
   padding: 4px;
-  border: 1px solid var(--separatorColor);
+  border: 1px solid var(--separator);
   border-radius: 30px;
-  background: var(--backgroundColor);
-  color: var(--bodyTextColor);
+  background: var(--background);
+  color: var(--text);
 }
 
 .app-nav > span  {
@@ -1247,12 +1247,12 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .app-nav .active  {
-  color: var(--accentColor);
-  background: var(--foregroundColor);
+  color: var(--accent);
+  background: var(--foreground);
 }
 
 .title-hero  {
-  background: var(--foregroundColor);
+  background: var(--foreground);
   margin: 0 -14px;
   padding: 0 14px 18px;
 }
@@ -1273,14 +1273,14 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .title-hero h4  {
-  color: var(--accentColor);
+  color: var(--accent);
   text-align: center;
   font-size: 1.2rem;
   margin: 0 0 4px;
 }
 
 .author  {
-  color: var(--subtitleTextColor);
+  color: var(--textSecondary);
   font-size: .85rem;
   text-align: center;
 }
@@ -1294,11 +1294,11 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .title-facts span  {
-  color: var(--accentColor);
+  color: var(--accent);
 }
 
 .title-facts small  {
-  color: var(--bodyTextColor);
+  color: var(--text);
   display: block;
   font-size: .55rem;
   letter-spacing: .09em;
@@ -1314,8 +1314,8 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 
 .sample-primary  {
   flex: 1.8;
-  background: var(--accentColor);
-  color: var(--accentTextColor);
+  background: var(--primary);
+  color: var(--primaryText);
   padding: 8px;
   text-align: center;
   font-size: .8rem;
@@ -1337,8 +1337,8 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
   justify-content: center;
   align-items: center;
   gap: 4px;
-  background: var(--buttonNormalBackgroundColor);
-  color: var(--buttonNormalTextColor);
+  background: var(--secondary);
+  color: var(--secondaryText);
   padding: 8px;
   text-align: center;
   font-size: .75rem;
@@ -1352,14 +1352,14 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .title-hero h5  {
-  color: var(--accentColor);
+  color: var(--accent);
   font-size: .95rem;
   font-weight: 500;
   margin: 0 0 7px;
 }
 
 .app-description  {
-  color: var(--bodyTextColor);
+  color: var(--text);
   font-size: .75rem;
   line-height: 1.45;
 }
@@ -1371,8 +1371,8 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .genre-tags span  {
-  background: var(--buttonNormalBackgroundColor);
-  color: var(--buttonNormalTextColor);
+  background: var(--secondary);
+  color: var(--secondaryText);
   padding: 4px 10px;
   border-radius: 20px;
   font-size: .65rem;
@@ -1388,23 +1388,23 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .chapters > .book-meta  {
-  color: var(--subtitleTextColor);
+  color: var(--textSecondary);
   margin-bottom: 8px;
 }
 
 .chapter-row  {
-  border-bottom: 1px solid var(--separatorColor);
+  border-bottom: 1px solid var(--separator);
   padding: 12px 0;
 }
 
 .chapter-row p  {
-  color: var(--accentColor);
+  color: var(--accent);
   font-size: .8rem;
 }
 
 .chapter-row small  {
   display: block;
-  color: var(--subtitleTextColor);
+  color: var(--textSecondary);
   font-size: .6rem;
   margin-top: 2px;
 }
@@ -1432,32 +1432,32 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 }
 
 .settings-brand h4  {
-  color: var(--accentColor);
+  color: var(--accent);
   font-size: 1.7rem;
   font-weight: 400;
   margin: 0;
 }
 
 .settings-brand p  {
-  color: var(--bodyTextColor);
+  color: var(--text);
   font-size: .65rem;
 }
 
 .sample-heading  {
   font-size: .85rem;
-  color: var(--subtitleTextColor);
+  color: var(--textSecondary);
   margin: 0 12px 8px;
 }
 
 .settings-group  {
-  background: var(--foregroundColor);
+  background: var(--foreground);
   border-radius: 22px;
   padding: 0 12px;
 }
 
 .settings-row  {
-  color: var(--accentColor);
-  border-bottom: 1px solid var(--separatorColor);
+  color: var(--accent);
+  border-bottom: 1px solid var(--separator);
   padding: 11px 0;
   display: flex;
   gap: 10px;
@@ -1487,7 +1487,7 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 .loading-layer  {
   position: absolute;
   inset: 0;
-  background: var(--overlayColor);
+  background: var(--overlay);
   display: grid;
   place-items: center;
   pointer-events: none;
@@ -1495,14 +1495,14 @@ html.appearance-changing, .appearance-changing body, .appearance-changing body *
 
 .loading-layer strong  {
   padding: .7rem;
-  background: var(--foregroundColor);
-  color: var(--bodyTextColor);
-  border: 1px solid var(--separatorColor);
+  background: var(--foreground);
+  color: var(--text);
+  border: 1px solid var(--separator);
   font-size: .875rem;
 }
 
 .phone .marked  {
-  outline: 2px dashed var(--bodyTextColor);
+  outline: 2px dashed var(--text);
   outline-offset: -3px;
 }
 
@@ -1871,4 +1871,9 @@ footer .format-notes  {
     overscroll-behavior-y: contain;
     scrollbar-gutter: stable;
   }
+}
+
+.app-version {
+  font-size: .5em;
+  white-space: nowrap;
 }

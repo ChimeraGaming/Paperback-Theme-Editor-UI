@@ -10,22 +10,35 @@ Sources:
 - [Normalized example](https://github.com/celarye/paperback-themes/blob/6283ee041318cadad07f7c520e7a16ab2f30b589/src/example-pbcolors/SRGBA.pbcolors)
 - [Public theme with metadata](https://github.com/celarye/paperback-themes/blob/6283ee041318cadad07f7c520e7a16ab2f30b589/themes/catppuccin/mocha/blue/theme.pbcolors)
 
-## Supported files
+## Current export format
 
-A `.pbcolors` file is JSON. The creator writes these ten top-level roles:
+Version 1.1 exports the current names, such as `accent`, `background`, and
+`text`. Version 1.0 exported the older names only, which newer Paperback
+versions can reject with "Theme contains no known colors".
 
-| Role | What it controls |
+Checked against the public app-export example and observation notes in
+[LucifersCircle/theme-editor](https://github.com/LucifersCircle/theme-editor/blob/b20323071231525b142f8de9539579fbb31d3cfb/src/themes/default.pbcolors),
+revision `b20323071231525b142f8de9539579fbb31d3cfb`. Its
+[research notes](https://github.com/LucifersCircle/theme-editor/blob/b20323071231525b142f8de9539579fbb31d3cfb/docs/paperback-v09-color-map.md)
+describe an export from Paperback v0.9-r187. This is community evidence,
+not an official specification or our own device installation test.
+
+## Legacy source and conversion
+
+A `.pbcolors` file is JSON. Older files use these names; import converts them:
+
+| Older name | Current name |
 | --- | --- |
-| `accentColor` | Main actions and selected controls |
-| `accentTextColor` | Text and icons on the accent color |
-| `foregroundColor` | Foreground surfaces and grouped rows |
-| `backgroundColor` | Main background |
-| `overlayColor` | Overlay while fetching updates |
-| `separatorColor` | Thin dividing lines |
-| `bodyTextColor` | Primary text |
-| `subtitleTextColor` | Supporting text |
-| `buttonNormalBackgroundColor` | Secondary action background |
-| `buttonNormalTextColor` | Secondary action text and icons |
+| `accentColor` | `accent` |
+| `accentTextColor` | `primaryText` |
+| `foregroundColor` | `foreground` |
+| `backgroundColor` | `background` |
+| `overlayColor` | `overlay` |
+| `separatorColor` | `separator` |
+| `bodyTextColor` | `text` |
+| `subtitleTextColor` | `textSecondary` |
+| `buttonNormalBackgroundColor` | `secondary` |
+| `buttonNormalTextColor` | `secondaryText` |
 
 Each role has `lightColor` and `darkColor`. Each appearance has numeric `red`,
 `green`, `blue`, and `alpha` channels, all from 0 to 1. For example, solid red is:
@@ -39,7 +52,12 @@ normalized example. Its license is included in `licenses/`.
 
 ## Import and export behavior
 
-The editor requires all ten roles and both appearances. It accepts UTF-8 JSON,
+The editor requires the ten mapped roles plus `primary`, with both appearances.
+For older files and saved drafts, `primary` starts as an independent copy of
+`accent`, preserving the previous Continue button color. Other current roles,
+such as `alertText`, are retained but do not yet have editor controls. Files
+containing both old and current names for the same role are rejected so neither
+value is silently discarded. It accepts UTF-8 JSON,
 including a leading byte-order mark, up to 1 MB. Invalid files leave the current
 theme untouched.
 
@@ -63,7 +81,7 @@ as normalized, following the creator's output.
 
 ## Preview limits
 
-The preview uses the ten roles in sample Home, Library, Search, title details, and settings
+The preview uses the eleven editable roles in sample Home, Library, Search, title details, and settings
 screens. Dashed selection outlines are editor annotations, not theme content.
 Cover artwork is fixed sample content and is not recolored by the theme.
 
@@ -75,3 +93,12 @@ and assignment of theme roles to newer controls remain approximations. The
 preview does not reproduce artwork blur or system glass effects. A valid round trip here proves
 that the data is preserved, not that the theme installs in every app version.
 Check the export in Paperback before publishing a theme.
+
+The loading-overlay placement remains an illustration. Its actual use in newer
+Paperback versions has not been established. RGB channels outside 0 to 1,
+including extended color-space values in some app exports, remain unsupported.
+
+Export checks also validate preserved current color roles without editor controls.
+An independent file test checks recognized key names, both appearances, numeric
+RGBA channels, and the .pbcolors filename without using the importer to validate
+the output. These checks do not execute Paperback's private decoder.

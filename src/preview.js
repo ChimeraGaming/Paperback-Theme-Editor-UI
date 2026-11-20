@@ -31,7 +31,7 @@ function cover(index) {
 }
 
 function unloadedBooks(indexes) {
-  return indexes.map(index => `<div><div class="unloaded-cover" aria-label="Cover unavailable">U</div><p class="book-title" ${tokens('accentColor')}>${titles[index]}</p></div>`).join('');
+  return indexes.map(index => `<div><div class="unloaded-cover" aria-label="Cover unavailable">U</div><p class="book-title" ${tokens('accent')}>${titles[index]}</p></div>`).join('');
 }
 
 /* ==============================
@@ -39,18 +39,18 @@ function unloadedBooks(indexes) {
    ============================== */
 
 function homeScreen() {
-  return `<div class="home-heading" ${tokens('accentColor')}>Home<span class="round-control">${icon('more')}</span></div>
-    <div class="source-tabs" ${tokens('separatorColor bodyTextColor')}><span class="source-selected" ${tokens('buttonNormalBackgroundColor buttonNormalTextColor')}>${icon('home')} Home</span><span>Source One</span><span>Source Two</span></div>
-    <section class="home-section"><p class="source-label" ${tokens('accentColor')}>Source One</p><h4 ${tokens('accentColor')}>Popular<i class="preview-chevron" aria-hidden="true"></i></h4><div class="shelf">${unloadedBooks([0, 1, 2])}</div></section>
-    <section class="home-section"><p class="source-label" ${tokens('accentColor')}>Source One</p><h4 ${tokens('accentColor')}>Most Bookmarked: Weekly<i class="preview-chevron" aria-hidden="true"></i></h4><p class="sort-label" ${tokens('bodyTextColor')}>Sort by: None</p><div class="shelf">${unloadedBooks([3, 4, 5])}</div></section>`;
+  return `<div class="home-heading" ${tokens('accent')}>Home<span class="round-control">${icon('more')}</span></div>
+    <div class="source-tabs" ${tokens('separator text')}><span class="source-selected" ${tokens('secondary secondaryText')}>${icon('home')} Home</span><span>Source One</span><span>Source Two</span></div>
+    <section class="home-section"><p class="source-label" ${tokens('accent')}>Source One</p><h4 ${tokens('accent')}>Popular<i class="preview-chevron" aria-hidden="true"></i></h4><div class="shelf">${unloadedBooks([0, 1, 2])}</div></section>
+    <section class="home-section"><p class="source-label" ${tokens('accent')}>Source One</p><h4 ${tokens('accent')}>Most Bookmarked: Weekly<i class="preview-chevron" aria-hidden="true"></i></h4><p class="sort-label" ${tokens('text')}>Sort by: None</p><div class="shelf">${unloadedBooks([3, 4, 5])}</div></section>`;
 }
 
 function libraryScreen() {
   const unread = [198, 557, 1, 131, 113, 94, 795, 115, 55];
-  return `<div class="home-heading" ${tokens('accentColor')}>Library<span class="round-control library-download" ${tokens('bodyTextColor separatorColor')}>${icon('download')}</span><span class="round-control">${icon('more')}</span></div>
+  return `<div class="home-heading" ${tokens('accent')}>Library<span class="round-control library-download" ${tokens('text separator')}>${icon('download')}</span><span class="round-control">${icon('more')}</span></div>
     ${searchField()}
-    <div class="source-tabs library-categories" ${tokens('bodyTextColor separatorColor')}><span>All</span><span class="source-selected" ${tokens('buttonNormalBackgroundColor buttonNormalTextColor')}>Uncategorized</span><span>Novel</span><span>Comic</span></div>
-    <div class="shelf library-shelf">${unread.map((count, index) => `<div class="library-book"><div class="library-cover">${cover(index % titles.length)}<span class="unread-count" ${tokens('accentColor accentTextColor')}>${count}</span></div><p class="book-title" ${tokens('accentColor')}>${titles[index % titles.length]}</p><p class="book-meta" ${tokens('bodyTextColor')}>${count} unread</p></div>`).join('')}</div>`;
+    <div class="source-tabs library-categories" ${tokens('text separator')}><span>All</span><span class="source-selected" ${tokens('secondary secondaryText')}>Uncategorized</span><span>Novel</span><span>Comic</span></div>
+    <div class="shelf library-shelf">${unread.map((count, index) => `<div class="library-book"><div class="library-cover">${cover(index % titles.length)}<span class="unread-count" ${tokens('accent primaryText')}>${count}</span></div><p class="book-title" ${tokens('accent')}>${titles[index % titles.length]}</p><p class="book-meta" ${tokens('text')}>${count} unread</p></div>`).join('')}</div>`;
 }
 
 /* ==============================
@@ -58,14 +58,14 @@ function libraryScreen() {
    ============================== */
 
 function searchField() {
-  return `<div class="preview-search" ${tokens('backgroundColor subtitleTextColor separatorColor')}>${icon('search')} Search</div>`;
+  return `<div class="preview-search" ${tokens('background textSecondary separator')}>${icon('search')} Search</div>`;
 }
 
 function searchScreen() {
   const sources = ['Source One', 'Source Two', 'Source Three', 'Source Four', 'Source Five', 'Source Six', 'Source Seven', 'Source Eight'];
-  return `<div class="home-heading" ${tokens('accentColor')}>Search</div>${searchField()}
-    <h4 class="advanced-heading" ${tokens('accentColor')}>Advanced Search</h4>
-    <div class="search-sources">${sources.map((name, index) => `<div class="search-source" ${tokens('foregroundColor')}><span class="source-mark source-mark-${index % 3}" aria-hidden="true">${String.fromCharCode(65 + index)}</span><div><p ${tokens('accentColor')}>${name}</p><small ${tokens('bodyTextColor')}>v1.0.0 · Sample extension</small></div><i class="preview-chevron" ${tokens('accentColor')} aria-hidden="true"></i></div>`).join('')}</div>`;
+  return `<div class="home-heading" ${tokens('accent')}>Search</div>${searchField()}
+    <h4 class="advanced-heading" ${tokens('accent')}>Advanced Search</h4>
+    <div class="search-sources">${sources.map((name, index) => `<div class="search-source" ${tokens('foreground')}><span class="source-mark source-mark-${index % 3}" aria-hidden="true">${String.fromCharCode(65 + index)}</span><div><p ${tokens('accent')}>${name}</p><small ${tokens('text')}>v1.0.0 · Sample extension</small></div><i class="preview-chevron" ${tokens('accent')} aria-hidden="true"></i></div>`).join('')}</div>`;
 }
 
 /* ==============================
@@ -73,18 +73,18 @@ function searchScreen() {
    ============================== */
 
 function detailsScreen() {
-  return `<section class="title-hero" ${tokens('foregroundColor')}>
-    <div class="title-tools"><span class="round-control" ${tokens('backgroundColor bodyTextColor separatorColor')}>${icon('back')}</span><span class="round-control" ${tokens('backgroundColor bodyTextColor separatorColor')}>${icon('share')}</span></div>
+  return `<section class="title-hero" ${tokens('foreground')}>
+    <div class="title-tools"><span class="round-control" ${tokens('background text separator')}>${icon('back')}</span><span class="round-control" ${tokens('background text separator')}>${icon('share')}</span></div>
     <div class="hero-cover">${cover(0)}</div>
-    <h4 ${tokens('accentColor')}>The Quiet Sea</h4><p class="author" ${tokens('subtitleTextColor')}>A. Rivers</p>
-    <div class="title-facts"><div><span ${tokens('accentColor')}>Ongoing</span><small ${tokens('bodyTextColor')}>STATUS</small></div><div><span ${tokens('accentColor')}>Everyone</span><small ${tokens('bodyTextColor')}>AUDIENCE</small></div></div>
-    <div class="title-actions"><div class="sample-primary" ${tokens('accentColor accentTextColor')}><strong>Continue</strong><small>Ch. 12 · Page 8</small></div><div class="sample-secondary" ${tokens('buttonNormalBackgroundColor buttonNormalTextColor')}>${icon('library')} In Library</div></div>
-    <div class="tablet-tracking"><h5 ${tokens('bodyTextColor')}>Tracking</h5><div class="sample-secondary" ${tokens('buttonNormalBackgroundColor buttonNormalTextColor')}>2 Trackers Available</div></div>
-    <h5 ${tokens('accentColor')}>About</h5><p class="app-description" ${tokens('bodyTextColor')}>A letter arrives in a seaside town. For the first time in years, someone has a reason to return.</p>
-    <div class="genre-tags" ${tokens('buttonNormalBackgroundColor buttonNormalTextColor')}><span>Adventure</span><span>Drama</span><span>Mystery</span></div>
-    </section><section class="chapters"><h4 ${tokens('bodyTextColor')}>24 Chapters</h4><p class="book-meta" ${tokens('subtitleTextColor')}>From Source One · 12 read · 12 new</p>
-    <div class="tablet-sources source-tabs"><span class="source-selected" ${tokens('buttonNormalBackgroundColor buttonNormalTextColor')}>Source One</span><span ${tokens('bodyTextColor separatorColor')}>Source Two</span><span ${tokens('bodyTextColor separatorColor')}>Manage</span></div>
-    ${[24, 23, 22, 21, 20, 19, 18, 17].map((n, index) => `<div class="chapter-row" ${tokens('separatorColor')}><p ${tokens('accentColor')}>Chapter ${n}</p><small ${tokens('subtitleTextColor')}>Sample group · en <span>${index + 1}d</span></small></div>`).join('')}</section>`;
+    <h4 ${tokens('accent')}>The Quiet Sea</h4><p class="author" ${tokens('textSecondary')}>A. Rivers</p>
+    <div class="title-facts"><div><span ${tokens('accent')}>Ongoing</span><small ${tokens('text')}>STATUS</small></div><div><span ${tokens('accent')}>Everyone</span><small ${tokens('text')}>AUDIENCE</small></div></div>
+    <div class="title-actions"><div class="sample-primary" ${tokens('primary primaryText')}><strong>Continue</strong><small>Ch. 12 · Page 8</small></div><div class="sample-secondary" ${tokens('secondary secondaryText')}>${icon('library')} In Library</div></div>
+    <div class="tablet-tracking"><h5 ${tokens('text')}>Tracking</h5><div class="sample-secondary" ${tokens('secondary secondaryText')}>2 Trackers Available</div></div>
+    <h5 ${tokens('accent')}>About</h5><p class="app-description" ${tokens('text')}>A letter arrives in a seaside town. For the first time in years, someone has a reason to return.</p>
+    <div class="genre-tags" ${tokens('secondary secondaryText')}><span>Adventure</span><span>Drama</span><span>Mystery</span></div>
+    </section><section class="chapters"><h4 ${tokens('text')}>24 Chapters</h4><p class="book-meta" ${tokens('textSecondary')}>From Source One · 12 read · 12 new</p>
+    <div class="tablet-sources source-tabs"><span class="source-selected" ${tokens('secondary secondaryText')}>Source One</span><span ${tokens('text separator')}>Source Two</span><span ${tokens('text separator')}>Manage</span></div>
+    ${[24, 23, 22, 21, 20, 19, 18, 17].map((n, index) => `<div class="chapter-row" ${tokens('separator')}><p ${tokens('accent')}>Chapter ${n}</p><small ${tokens('textSecondary')}>Sample group · en <span>${index + 1}d</span></small></div>`).join('')}</section>`;
 }
 
 /* ==============================
@@ -93,9 +93,9 @@ function detailsScreen() {
 
 function settingsScreen() {
   const rows = [['settings', 'General Settings'], ['theme', 'Theme Settings'], ['extension', 'Extensions'], ['history', 'Backup and Restore'], ['cloud', 'iCloud Sync'], ['code', 'Developer']];
-  return `<div class="settings-brand"><div class="sample-app-mark" aria-hidden="true">pb</div><h4 ${tokens('accentColor')}>Paperback</h4><p ${tokens('bodyTextColor')}>Layout reference: v0.9-r217</p></div>
-    <p class="sample-heading" ${tokens('subtitleTextColor')}>General</p>
-    <div class="settings-group" ${tokens('foregroundColor')}>${rows.map(([symbol, name]) => `<div class="settings-row" ${tokens('separatorColor accentColor')}>${icon(symbol)}<span>${name}</span><i aria-hidden="true"></i></div>`).join('')}</div>`;
+  return `<div class="settings-brand"><div class="sample-app-mark" aria-hidden="true">pb</div><h4 ${tokens('accent')}>Paperback</h4><p ${tokens('text')}>Layout reference: v0.9-r217</p></div>
+    <p class="sample-heading" ${tokens('textSecondary')}>General</p>
+    <div class="settings-group" ${tokens('foreground')}>${rows.map(([symbol, name]) => `<div class="settings-row" ${tokens('separator accent')}>${icon(symbol)}<span>${name}</span><i aria-hidden="true"></i></div>`).join('')}</div>`;
 }
 
 /* ==============================
@@ -105,10 +105,10 @@ function settingsScreen() {
 export function previewMarkup(screen, loading) {
   const active = screen === 'details' ? 'home' : screen;
   const nav = [['home', 'Home'], ['search', 'Search'], ['library', 'Library'], ['history', 'History'], ['settings', 'Settings']];
-  return `<div class="phone-status" ${tokens('bodyTextColor')}><span>9:41</span><span class="camera-cutout" aria-hidden="true"></span><span>Wi-Fi 100%</span></div>
-    <div class="phone-scroll" tabindex="0" role="region" aria-label="Scrollable app screen" ${tokens('backgroundColor')}>
+  return `<div class="phone-status" ${tokens('text')}><span>9:41</span><span class="camera-cutout" aria-hidden="true"></span><span>Wi-Fi 100%</span></div>
+    <div class="phone-scroll" tabindex="0" role="region" aria-label="Scrollable app screen" ${tokens('background')}>
     ${{home: homeScreen, library: libraryScreen, search: searchScreen, details: detailsScreen, settings: settingsScreen}[screen]()}
-    ${loading ? `<div class="loading-layer" ${tokens('overlayColor')}><strong ${tokens('foregroundColor bodyTextColor separatorColor')}>Fetching updates...</strong></div>` : ''}</div>
-    <div class="phone-bottom"><div class="reading-bar" ${tokens('backgroundColor separatorColor')}><div><strong ${tokens('accentColor')}>The Quiet Sea</strong><small ${tokens('bodyTextColor')}>Ch. 12 · Page 8</small></div><span ${tokens('accentColor')}>${icon('close')}</span></div>
-    <div class="app-nav" ${tokens('backgroundColor separatorColor bodyTextColor')}>${nav.map(([symbol, label]) => `<span class="${symbol === active ? 'active' : ''}" ${tokens(symbol === active ? 'accentColor foregroundColor' : 'bodyTextColor')}>${icon(symbol)}<small>${label}</small></span>`).join('')}</div></div>`;
+    ${loading ? `<div class="loading-layer" ${tokens('overlay')}><strong ${tokens('foreground text separator')}>Fetching updates...</strong></div>` : ''}</div>
+    <div class="phone-bottom"><div class="reading-bar" ${tokens('background separator')}><div><strong ${tokens('accent')}>The Quiet Sea</strong><small ${tokens('text')}>Ch. 12 · Page 8</small></div><span ${tokens('accent')}>${icon('close')}</span></div>
+    <div class="app-nav" ${tokens('background separator text')}>${nav.map(([symbol, label]) => `<span class="${symbol === active ? 'active' : ''}" ${tokens(symbol === active ? 'accent foreground' : 'text')}>${icon(symbol)}<small>${label}</small></span>`).join('')}</div></div>`;
 }

@@ -3,20 +3,24 @@
    ============================== */
 
 export const roles = [
-  ['accentColor', 'Accent', 'Main actions, selected tabs, and highlighted controls.'],
-  ['accentTextColor', 'Text on accent', 'Text and icons placed on the accent color.'],
-  ['foregroundColor', 'Foreground', 'Navigation bars, grouped rows, and raised surfaces.'],
-  ['backgroundColor', 'Background', 'The main surface behind the page content.'],
-  ['overlayColor', 'Loading overlay', 'A translucent layer over content while updates load. Turn on the loading preview to see it.'],
-  ['separatorColor', 'Separators', 'Thin lines between rows and sections.'],
-  ['bodyTextColor', 'Body text', 'Titles, labels, and other primary text.'],
-  ['subtitleTextColor', 'Secondary text', 'Descriptions, chapter counts, and supporting labels.'],
-  ['buttonNormalBackgroundColor', 'Secondary button', 'The background of less prominent actions.'],
-  ['buttonNormalTextColor', 'Secondary button text', 'Text and icons inside secondary buttons.']
+  ['accent', 'Accent', 'Main actions, selected tabs, and highlighted controls.'],
+  ['primary', 'Primary button', 'The Continue button background.'],
+  ['primaryText', 'Primary button text', 'Text and icons inside the Continue button.'],
+  ['foreground', 'Foreground', 'Navigation bars, grouped rows, and raised surfaces.'],
+  ['background', 'Background', 'The main surface behind the page content.'],
+  ['overlay', 'Loading overlay', 'A translucent layer over content while updates load. Turn on the loading preview to see it.'],
+  ['separator', 'Separators', 'Thin lines between rows and sections.'],
+  ['text', 'Body text', 'Titles, labels, and other primary text.'],
+  ['textSecondary', 'Secondary text', 'Descriptions, chapter counts, and supporting labels.'],
+  ['secondary', 'Secondary button', 'The background of less prominent actions.'],
+  ['secondaryText', 'Secondary button text', 'Text and icons inside secondary buttons.']
 ];
 
 export const modes = ['lightColor', 'darkColor'];
 const channels = ['red', 'green', 'blue', 'alpha'];
+// Current Paperback roles that are preserved without editor controls.
+const additionalRoles = ['alert', 'alertText', 'border', 'error', 'success',
+  'tertiary', 'tertiaryText', 'textTertiary', 'warning'];
 const isObject = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 
 /* ==============================
@@ -27,14 +31,37 @@ export function parseTheme(text) {
   let theme;
   try { theme = JSON.parse(text.replace(/^\uFEFF/, '')); }
   catch { throw new Error('This file is not valid JSON. Choose a .pbcolors file exported by the Paperback theme creator.'); }
-  return validateTheme(theme);
+  return validateTheme(upgradeLegacyTheme(theme));
+}
+
+// Older themes used different names. Convert them once, including saved drafts.
+const legacyRoles = {"accentColor": "accent", "accentTextColor": "primaryText", "foregroundColor": "foreground", "backgroundColor": "background", "overlayColor": "overlay", "separatorColor": "separator", "bodyTextColor": "text", "subtitleTextColor": "textSecondary", "buttonNormalBackgroundColor": "secondary", "buttonNormalTextColor": "secondaryText"};
+
+function upgradeLegacyTheme(theme) {
+  if (!isObject(theme)) return theme;
+  let legacy = false;
+  for (const [oldKey, key] of Object.entries(legacyRoles)) {
+    if (!Object.hasOwn(theme, oldKey)) continue;
+    if (Object.hasOwn(theme, key)) {
+      throw new Error(`This file contains both ${oldKey} and ${key}. Keep one color definition before importing.`);
+    }
+    theme[key] = theme[oldKey];
+    delete theme[oldKey];
+    legacy = true;
+  }
+  if (legacy && !Object.hasOwn(theme, 'primary') && Object.hasOwn(theme, 'accent')) {
+    theme.primary = structuredClone(theme.accent);
+  }
+  return theme;
 }
 
 export function validateTheme(theme) {
   if (!isObject(theme)) throw new Error('The theme must be a JSON object.');
-  for (const [key, label] of roles) {
+  const presentAdditionalRoles = additionalRoles
+    .filter(key => Object.hasOwn(theme, key)).map(key => [key, key]);
+  for (const [key, label] of [...roles, ...presentAdditionalRoles]) {
     if (!Object.hasOwn(theme, key) || !isObject(theme[key])) {
-      throw new Error(`Missing ${label} (${key}). All ten color roles are required.`);
+      throw new Error(`Missing ${label} (${key}). All eleven editor color roles are required.`);
     }
     for (const mode of modes) {
       const color = theme[key][mode];

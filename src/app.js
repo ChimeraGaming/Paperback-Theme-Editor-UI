@@ -20,7 +20,7 @@ let theme;
 let starter;
 let mode = 'lightColor';
 let screen = 'home';
-let selected = 'accentColor';
+let selected = 'accent';
 let changed = false;
 let draftSaved = true;
 const invalid = new Set();

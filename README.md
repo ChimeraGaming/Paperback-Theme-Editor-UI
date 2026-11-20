@@ -1,6 +1,6 @@
 # Paperback-Theme-Editor-UI
 
-![Version 1.0](https://img.shields.io/badge/version-1.0-blue)
+![Version 1.1](https://img.shields.io/badge/version-1.1-blue)
 ![iOS](https://img.shields.io/badge/platform-iOS-black)
 
 **[Open the live editor](https://chimeragaming.github.io/Paperback-Theme-Editor-UI/)**
